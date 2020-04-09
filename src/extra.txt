@@ -1,0 +1,55 @@
+aki va ir lo que se puede cambiar al nombrar las constante o si es una palabra reservada y otros
+
+el archivo arran la app entera
+
+el comando npm start se ejecuta cuando la app esta en produccion y el npm run dev en desarrollo
+
+los requiere normalmente se les pone en una constante eso o algo esta fallando en el archivo importado
+
+el modulo env es para asignar variables(de entorno) al cargar la web 
+
+se pondra por eso el modulo dontenv para que se cargue 
+
+NOTES_APP_MONGOD_HOST // PARA DETERMINAR EL LUGAR DE LA BASE DE DATOS
+NOTES_APP_MONGOD_DATABASE // PARA DETERMINAR LA BASE DE DATOS
+
+mongodb://localhost/Notas // lo que dice Notas es la base de datos
+la mayoria de las constante se pueden cambiar el nombre //const ejem = requiere ("mongose")---ejemplo
+
+elg gitignore inidica a git que archivos o carpetas ignorar
+
+ timestamps//añada por defecto la fecha de creacion al titulo y a la descripcion
+
+ encryPassword del modelo de user se  puede variar el que esta despues UserSchema.methods....
+ await se pone al realizar algo ( cifrar,enviar,solicitar,etc) por lo que se en la funcion se pone async
+
+ layouts archivos hbs(basicamente html pero con mas funciones) son los que se va a usar en toda la web
+ partials archivos hbs que se pude utilizar en cualquier parte de la web
+
+ app.set("view engine", ".hbs"); //del archivos del servidor tiene que ir asi si o si sino no carga las plantillas html
+ 
+ las rutas son archivos que se usan para cierta funcion (crud de notas,user,etc.)
+ put actuliza algo ya creado 
+ post crea una nueva nota
+
+ // psf en notes.routes.js se puede hacer los siguiente (segun yo para que sea mas corto el cod..) 
+ const connote = requiere("../controllers/note.controller")
+router.get("/notes/add", connote.renderNoteForm); en vez de llamar funciones una por una 
+(si se va a usar todas )
+
+succes_msg es el nombre del msg (que se asigna)
+
+done o next es para que sig el codig que esta debajo del codigo que se acaba de ejecutar
+
+se importa el modelo user por que atra vez de el se interactua con la base de datos
+
+
+isAuthenticated es para que el user o la persona que ponga /notes/add o /notes (o otros que solo pueda ver el user regis
+y logeado) no lo vea y se redirec..a formu..de inicio (osea protec...de las rutas)
+  if (note.user != req.user.id) {
+    req.flash('error_msg', 'Not Authorize')
+    return res.redirect('/notes');
+  } este cod de note control...es para evitar que otros user elimente o editen notas de otros users
+
+//ciframos el correo y enviar info a el o otras cosa mas? fututo exp 
+//mostrar usuario que inicio sessi

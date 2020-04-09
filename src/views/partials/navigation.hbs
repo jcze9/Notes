@@ -1,0 +1,35 @@
+<div class="navbar navbar-expand-lg navbar-black bg-dark ">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/">Note App</a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active text-white" href="/">Inicio<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-white" href="/about">About</a>
+            </div>
+            <div class="navbar-nav">
+            </div>
+            <div class="navbar-nav ml-auto">
+                {{#if user}}
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Notas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/notes">All Notes</a>
+                        <a class="dropdown-item" href="/notes/add">Add Note</a>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </div>
+                </div>
+                {{else}}
+                <a href="/users/signin" class="nav-item nav-link text-white">Login</a>
+                <a href="/users/signup" class="nav-item nav-link text-white">Register</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
